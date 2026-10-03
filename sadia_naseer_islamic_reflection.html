@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Thought for the Heart — Sadia Naseer</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
+:root{--navy:#071426;--navy2:#0d2038;--cream:#f4efe3;--gold:#d8b56a;--muted:#b9c3d1;--card:rgba(255,255,255,.07)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% 20%,#183354 0,#071426 45%,#040b15 100%);color:var(--cream);font-family:Inter,Arial,sans-serif;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;opacity:.09;background-image:linear-gradient(30deg,#fff 12%,transparent 12.5%,transparent 87%,#fff 87.5%,#fff),linear-gradient(150deg,#fff 12%,transparent 12.5%,transparent 87%,#fff 87.5%,#fff);background-size:70px 120px;pointer-events:none}
+section{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:60px 20px;position:relative}.wrap{max-width:1000px;width:100%;text-align:center}
+.moon{width:90px;height:90px;border-radius:50%;box-shadow:22px -10px 0 0 var(--cream);margin:0 auto 35px;transform:rotate(-20deg);opacity:.92}
+.eyebrow{letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-size:12px}.hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(54px,9vw,105px);font-weight:500;line-height:.9;margin:22px 0}.hero p{color:var(--muted);max-width:620px;margin:0 auto 30px;line-height:1.8}.credit{margin-top:55px;font-size:13px;color:#8e9bad}.credit strong{display:block;color:var(--cream);font-size:16px;margin-top:7px;font-weight:500}
+button{border:1px solid rgba(216,181,106,.65);background:linear-gradient(135deg,rgba(216,181,106,.18),rgba(255,255,255,.05));color:var(--cream);padding:15px 25px;border-radius:999px;font-size:14px;cursor:pointer;transition:.25s}button:hover{transform:translateY(-2px);background:rgba(216,181,106,.25)}
+.hidden{display:none}.panel{background:rgba(6,18,33,.72);border:1px solid rgba(216,181,106,.22);border-radius:28px;padding:38px;backdrop-filter:blur(14px);box-shadow:0 20px 70px #0005}.panel h2{font-family:"Cormorant Garamond",serif;font-size:48px;margin:8px 0 12px;font-weight:500}.panel .intro{color:var(--muted);margin-bottom:28px}.choices{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.choice{padding:18px 10px;border:1px solid rgba(255,255,255,.1);border-radius:16px;background:rgba(255,255,255,.035);color:var(--cream);cursor:pointer;transition:.2s}.choice:hover{border-color:var(--gold);transform:translateY(-2px)}
+.result{margin-top:28px;text-align:left;animation:fade .5s}.result .label{color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-size:11px}.arabic{font-family:"Times New Roman",serif;font-size:31px;line-height:2;text-align:center;margin:24px 0}.translation{font-family:"Cormorant Garamond",serif;font-size:27px;line-height:1.35;text-align:center}.ref{color:var(--muted);text-align:center;margin:12px}.reflection{border-top:1px solid rgba(255,255,255,.1);margin-top:25px;padding-top:22px;color:#d6dde6;line-height:1.8;text-align:center}
+footer{text-align:center;color:#758295;padding:20px;font-size:12px}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:700px){.choices{grid-template-columns:repeat(2,1fr)}.panel{padding:25px}.arabic{font-size:25px}.translation{font-size:23px}}
+</style>
+</head>
+<body>
+<section class="hero" id="home"><div class="wrap">
+<div class="moon"></div><div class="eyebrow">An Islamic Reflection Space</div>
+<h1>A Thought<br>for the Heart</h1>
+<p>Some moments need an answer. Others simply need a gentle reminder. Begin your reflection and let a Qur’anic verse meet you where you are.</p>
+<button onclick="document.getElementById('start').scrollIntoView()">Begin Your Reflection ✦</button>
+<div class="credit">Created &amp; Designed by<strong>Sadia Naseer</strong></div>
+</div></section>
+
+<section id="start"><div class="wrap"><div class="panel">
+<div class="eyebrow">Choose what feels closest to your heart</div>
+<h2>How are you feeling today?</h2><p class="intro">Take a moment. There is no right or wrong answer.</p>
+<div class="choices">
+<div class="choice" onclick="show('sad')">🌧 Sad</div><div class="choice" onclick="show('worried')">🌙 Worried</div>
+<div class="choice" onclick="show('peaceful')">🕊 Peaceful</div><div class="choice" onclick="show('hope')">✨ Need Hope</div>
+<div class="choice" onclick="show('lonely')">🤍 Lonely</div><div class="choice" onclick="show('grateful')">🌿 Grateful</div>
+<div class="choice" onclick="show('patience')">⏳ Need Patience</div><div class="choice" onclick="show('guidance')">🤲 Need Guidance</div>
+</div>
+<div id="result" class="result hidden"></div>
+</div></div></section>
+<footer>Made with intention • Sadia Naseer</footer>
+<script>
+const data={
+sad:{title:"When Your Heart Feels Heavy",arabic:"فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",translation:"“For indeed, with hardship comes ease.”",ref:"Surah Ash-Sharh · 94:5",text:"Hard moments do not define the whole story. Hold on to hope, make du‘a, and remember that ease can exist alongside hardship."},
+hope:{title:"A Reminder of Hope",arabic:"فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",translation:"“For indeed, with hardship comes ease.”",ref:"Surah Ash-Sharh · 94:5",text:"Whatever today feels like, it is not the end of your story. Turn toward Allah and keep going with hope."},
+peaceful:{title:"When Your Heart Is at Peace",arabic:"أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ",translation:"“Surely in the remembrance of Allah do hearts find comfort.”",ref:"Surah Ar-Ra'd · 13:28",text:"Let gratitude turn this peaceful moment into remembrance. What brings calm to the heart is worth returning to."},
+worried:{title:"When You Feel Worried",arabic:"لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا",translation:"“Allah does not burden a soul beyond what it can bear.”",ref:"Surah Al-Baqarah · 2:286",text:"You do not have to solve everything at once. Take one sincere step, ask Allah for help, and leave what is beyond you to Him."},
+lonely:{title:"When You Feel Alone",arabic:"وَهُوَ مَعَكُمْ أَيْنَ مَا كُنتُمْ",translation:"“And He is with you wherever you are.”",ref:"Surah Al-Hadid · 57:4",text:"A quiet moment can become a moment of remembrance. You can speak to Allah in the simplest words, exactly as you are."},
+grateful:{title:"A Moment of Gratitude",arabic:"لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ",translation:"“If you are grateful, I will surely increase you.”",ref:"Surah Ibrahim · 14:7",text:"Pause and notice one blessing you might normally overlook. Gratitude turns an ordinary moment into remembrance."},
+patience:{title:"A Reminder to Be Patient",arabic:"إِنَّ اللَّهَ مَعَ الصَّابِرِينَ",translation:"“Indeed, Allah is with the patient.”",ref:"Surah Al-Baqarah · 2:153",text:"Patience is not giving up. It is continuing with trust, even when the result has not arrived yet."},
+guidance:{title:"When You Need Guidance",arabic:"اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ",translation:"“Guide us to the straight path.”",ref:"Surah Al-Fatihah · 1:6",text:"Sometimes the most beautiful beginning is simply asking for guidance. Make the du‘a sincerely, then take the next right step."}
+};
+function show(k){const d=data[k];const r=document.getElementById('result');r.classList.remove('hidden');r.innerHTML=`<div class="label">Your Reflection</div><h2>${d.title}</h2><div class="arabic" dir="rtl">${d.arabic}</div><div class="translation">${d.translation}</div><div class="ref">${d.ref}</div><div class="reflection">${d.text}</div><div style="text-align:center;margin-top:25px"><button onclick="document.getElementById('home').scrollIntoView()">Return Home</button></div>`;r.scrollIntoView({behavior:'smooth',block:'center'})}
+</script>
+</body>
+</html>
